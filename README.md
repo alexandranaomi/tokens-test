@@ -1,3 +1,3 @@
 # tokens-test
 
-A test to check how erm-tokens are consumed.
+A test to check how emr-tokens are consumed.
