@@ -1,32 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'
+//Import Emr Tokens
+import * as tokens from '@philips-internal/emr-tokens-variables';
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const AppStyle = {
+    fontFamily: tokens.FontSansnext,
+    color: tokens.GlobalGray60,
+  }
+
+  const AppName = {
+    fontSize: tokens.FontSize4,
+  }
+
+  const InputStyle = {
+    borderColor: tokens.GlobalGray10,
+    borderRadius: tokens.InputBorderRadius,
+    fontSize: tokens.FontSize1,
+    marginBottom: tokens.Size3,
+    paddingLeft: tokens.Size4,
+  }
+
+  const BtnStyle = {
+    backgroundColor: tokens.GlobalGroupblue45,
+    borderRadius: tokens.ButtonBorderRadius,
+    color:tokens.ColorPrimaryNormalOnBackground,
+    marginBottom: tokens.Size3,
+  }
+
+  const LinkStyle = {
+    color: tokens.LinkColorNormal,
+  }
 
   return (
-    <div className="App">
+    <div className="App" style={ AppStyle }>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+          <img src="/philips-logo.svg" className="logo" alt="Philips logo" />
+          <h3 style={ AppName }>Application name</h3>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+      <div className="form">
+        <input type="text" placeholder="Username" style={ InputStyle }/>
+        <input type="password" placeholder="Password" style ={ InputStyle }/>
+        <button style={ BtnStyle }>
+          Log in
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <a href="#" style={ LinkStyle } >
+          Forgot password
+        </a>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
   )
 }
